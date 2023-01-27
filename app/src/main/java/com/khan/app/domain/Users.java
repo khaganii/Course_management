@@ -1,5 +1,6 @@
 package com.khan.app.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
@@ -10,19 +11,21 @@ import java.time.LocalDate;
 @Entity
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class Subject {
+public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     String name;
-    @OneToOne
-    Users createBy;
+    String surname;
+    String username;
+    String password;
+    String email;
     LocalDate timeCreated;
+    LocalDate birthday;
     String description;
     Boolean enabled;
-    @OneToOne
-    Topic topic;
     @ManyToOne
-    @JoinColumn(name="course_id")
-    Course course;
+    @JoinColumn(name="group_id")
+            @JsonIgnore
+    Group group;
 }

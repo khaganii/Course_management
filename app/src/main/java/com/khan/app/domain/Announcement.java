@@ -17,7 +17,7 @@ public class Announcement {
     Long id;
     String name;
     @OneToOne
-    User createBy;
+    Users createBy;
     LocalDate timeCreated;
     LocalDate timeFinished;
     String description;

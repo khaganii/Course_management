@@ -14,7 +14,7 @@ public class UserEnrolment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     @OneToOne
-    User user;
+    Users user;
     @OneToOne
     Course course;
     @OneToOne

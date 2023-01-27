@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestController {
     @GetMapping
     public String get(){
-        return "auye";
+        return "Test case passed!";
     }
 }

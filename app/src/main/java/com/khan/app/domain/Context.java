@@ -6,7 +6,6 @@ import lombok.experimental.FieldDefaults;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.List;
 
 @Entity
 @Data
@@ -17,7 +16,7 @@ public class Context {
     Long id;
     String name;
     @OneToOne
-    User createBy;
+    Users createBy;
     LocalDate timeCreated;
     String text;
     String description;

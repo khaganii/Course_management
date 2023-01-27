@@ -6,7 +6,6 @@ import lombok.experimental.FieldDefaults;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.List;
 
 @Entity
 @Data
@@ -17,7 +16,7 @@ public class TimeTable {
     Long id;
     String description;
     @OneToOne
-    User createBy;
+    Users createBy;
     LocalDate timeCreated;
     Boolean enabled;
 }

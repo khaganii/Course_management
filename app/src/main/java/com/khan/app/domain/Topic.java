@@ -6,7 +6,6 @@ import lombok.experimental.FieldDefaults;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.List;
 
 @Entity
 @Data
@@ -18,7 +17,7 @@ public class Topic{
     String name;
     LocalDate timeCreated;
     @OneToOne
-    User createBy;
+    Users createBy;
     String description;
     Boolean enabled;
     @OneToOne

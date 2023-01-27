@@ -15,12 +15,13 @@ public class Course {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
+    @Column(unique = true)
     String name;
     String description;
     @OneToOne
     TimeTable timeTable;
     @OneToOne
-    User createBy;
+    Users createBy;
     LocalDate timeCreated;
     @ManyToMany(mappedBy = "courses")
     List<Announcement> announcements;
