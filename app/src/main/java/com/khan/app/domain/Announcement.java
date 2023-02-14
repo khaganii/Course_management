@@ -1,5 +1,6 @@
 package com.khan.app.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
@@ -28,5 +29,6 @@ public class Announcement {
     @JoinTable(name = "course_announcement",
             joinColumns = @JoinColumn(name = "announcement_id"),
             inverseJoinColumns = @JoinColumn(name = "course_id"))
+    @JsonIgnore
     List<Course> courses;
 }

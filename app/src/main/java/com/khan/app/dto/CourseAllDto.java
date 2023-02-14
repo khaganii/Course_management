@@ -1,32 +1,28 @@
-package com.khan.app.domain;
+package com.khan.app.dto;
 
+import com.khan.app.domain.Announcement;
+import com.khan.app.domain.Subject;
+import com.khan.app.domain.TimeTable;
+import com.khan.app.domain.Users;
 import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
-
-import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
 
-@Entity
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class Course {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
-    @Column(unique = true)
+public class CourseAllDto {
     String name;
     String description;
-    @OneToOne
     TimeTable timeTable;
-    @OneToOne
     Users createBy;
     LocalDate timeCreated;
-    @ManyToMany(mappedBy = "courses")
     List<Announcement> announcements;
-    @OneToMany(mappedBy="course")
     List<Subject> subjects;
     Boolean enabled;
-
 }

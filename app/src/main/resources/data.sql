@@ -11,3 +11,10 @@ INSERT INTO groups_of_users (description, enabled, name, time_created, create_by
 ('First_Group', 1, 'm1452a', '2022-01-01', 1),
 ('second_Group', 1, '1456a', '2017-10-21', 2),
 ('third_Group', 1, '1212r', '2013-04-17', 3);
+
+INSERT INTO course (description, enabled, name, time_created, create_by_id) VALUES
+('course_1', 1, 'c_1', '2022-01-12', '1'),
+('course_2', 1, 'c_2', '2022-03-11', '2'),
+('course_3', 0, 'c_3', '2022-05-21', '3'),
+('course_4', 1, 'c_4', '2022-06-23', '4'),
+('course_5', 0, 'c_5', '2022-08-21', '1');

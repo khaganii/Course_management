@@ -1,5 +1,6 @@
 package com.khan.app.service;
 
+import com.khan.app.domain.Users;
 import com.khan.app.dto.UserLoginPermissionResponseDto;
 import com.khan.app.dto.UserRequestLoginDto;
 import com.khan.app.dto.UserResponseLoginDto;
@@ -43,6 +44,7 @@ public class UserService {
     }
 
     public UserResponseLoginDto findByIdEnabled(Long id) {
-        return  Mapper.map(userRepo.findByIdAndEnabled(id), UserResponseLoginDto.class);
+        Users u = userRepo.findByIdAndEnabled(id);
+        return u!=null ? Mapper.map(u, UserResponseLoginDto.class):null;
     }
 }

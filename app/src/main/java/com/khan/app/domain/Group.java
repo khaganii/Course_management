@@ -20,7 +20,7 @@ public class Group {
     @Column(unique = true)
     String name;
     @OneToOne
-            @JsonIgnore
+    @JsonIgnore
     Users createBy;
     LocalDate timeCreated;
     String description;

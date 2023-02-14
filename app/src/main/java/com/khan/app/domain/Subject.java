@@ -1,5 +1,6 @@
 package com.khan.app.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
@@ -16,6 +17,7 @@ public class Subject {
     Long id;
     String name;
     @OneToOne
+    @JsonIgnore
     Users createBy;
     LocalDate timeCreated;
     String description;
